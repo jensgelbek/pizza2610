@@ -57,6 +57,7 @@ public class GenerateResource extends Provider{
                 facade.createCourse(cdto2);
         facade.createCourse(cdto3);
         facade.createCourse(cdto4);
+        return Response.ok("Menu generated").build();
 
     }
 
