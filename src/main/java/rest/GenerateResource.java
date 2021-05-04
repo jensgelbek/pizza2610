@@ -50,15 +50,14 @@ public class GenerateResource extends Provider{
     public Response getAll() {
         CourseDTO cdto1=new CourseDTO("Vesuvio","pizza",10,"lækker");
         CourseDTO cdto2=new CourseDTO("to","pizza",20,"lækkeytrr");
-        CourseDTO cdto3=new CourseDTO("tre","pizza",30,"lgreækker");
+        CourseDTO cdto3=new CourseDTO("tre","burger",30,"lgreækker");
         CourseDTO cdto4=new CourseDTO("fire","pizza",40,"lækkerytr");
         CourseFacade facade=CourseFacade.getCourseFacade(EMF);
         facade.createCourse(cdto1);
-                facade.createCourse(cdto2);
+        facade.createCourse(cdto2);
         facade.createCourse(cdto3);
         facade.createCourse(cdto4);
         return Response.ok("Menu generated").build();
-
     }
 
     @Override
