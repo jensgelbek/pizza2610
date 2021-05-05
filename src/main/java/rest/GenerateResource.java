@@ -19,6 +19,8 @@ import javax.ws.rs.core.Response;
 import rest.provider.Provider;
 import entities.Course;
 import facades.CourseFacade;
+import java.util.ArrayList;
+import java.util.List;
 /**
  * REST Web Service
  *
@@ -48,15 +50,28 @@ public class GenerateResource extends Provider{
 
     @Override
     public Response getAll() {
-        CourseDTO cdto1=new CourseDTO("Vesuvio","pizza",10,"lækker");
-        CourseDTO cdto2=new CourseDTO("to","pizza",20,"lækkeytrr");
-        CourseDTO cdto3=new CourseDTO("tre","burger",30,"lgreækker");
-        CourseDTO cdto4=new CourseDTO("fire","pizza",40,"lækkerytr");
+        List<CourseDTO> courses=new ArrayList<>();
+        courses.add(new CourseDTO("Margherita","Pizza",4,"Tomato Sauce,Mozzarella and Basil"));
+        courses.add(new CourseDTO("Funghi","Pizza",5,"Tomato Sauce, Mozzarella, Mushrooms and Thyme"));
+        courses.add(new CourseDTO("Fiorentina","Pizza",6,"Tomato Sauce,Mozzarella, Parmesan, Egg and Fresh Spinach"));
+        courses.add(new CourseDTO("Giardino","Pizza",6,"Tomato Sauce, Vegan Mozzarella, Mixed Peppers, Mushrooms and Double Basil"));
+        courses.add(new CourseDTO("Formaggi","Pizza",5,"Tomato Sauce, Mozzarella, Parmesan, Mascarpone and Gorgonzola"));
+        courses.add(new CourseDTO("Fumo","Pizza",6,"Tomato Sauce, Mozzarella, BBQ Sauce, Chicken and Onions"));
+        courses.add(new CourseDTO("Regina","Pizza",7,"Tomato Sauce, Mozzarella, Parmesan, Ham, Mushrooms and Black Olivesh"));
+        courses.add(new CourseDTO("Tropicali","Pizza",6,"Tomato Sauce, Mozzarella, Ham, Pineapple and Oreganol"));
+        courses.add(new CourseDTO("Verona","Pizza",6,"Tomato Sauce, Mozzarella, Pepperoni, Pancetta Bacon and Green Chillies"));
+        courses.add(new CourseDTO("Pepperoni","Pizza",6,"Tomato Sauce, Mozzarella and Double Pepperoni"));
+        courses.add(new CourseDTO("Calabria","Pizza",6,"Tomato Sauce, Mozzarella, Mascarpone, Nduja Spicy Sausage and Rocket"));
+        courses.add(new CourseDTO("Carne","Pizza",7,"Tomato Sauce, Mozzarella, Chicken, Beef, Pepperoni, Onions and  Rosemary"));
+        courses.add(new CourseDTO("Pollo","Pizza",6,"Tomato Sauce, Mozzarella, Chicken, Mixed Peppers and Thyme"));
+        courses.add(new CourseDTO("Roma","Pizza",6,"Tomato Sauce, Mozzarella, Gorgonzola, Pancetta Bacon and Mushrooms"));
+        courses.add(new CourseDTO("Capra","Pizza",6,"White Pizza with Mozzarella, Goats Cheese, Black Olives and Rocket"));
+        courses.add(new CourseDTO("Aglio","Pizza",4,"White Pizza with Mozzarella, Parmesan, Garlic and Rosemary"));
         CourseFacade facade=CourseFacade.getCourseFacade(EMF);
-        facade.createCourse(cdto1);
-        facade.createCourse(cdto2);
-        facade.createCourse(cdto3);
-        facade.createCourse(cdto4);
+        for(CourseDTO courseDTO:courses){
+            facade.createCourse(courseDTO);
+        }
+      
         return Response.ok("Menu generated").build();
     }
 
