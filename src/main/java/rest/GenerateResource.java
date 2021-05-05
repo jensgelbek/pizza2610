@@ -67,6 +67,22 @@ public class GenerateResource extends Provider{
         courses.add(new CourseDTO("Roma","Pizza",6,"Tomato Sauce, Mozzarella, Gorgonzola, Pancetta Bacon and Mushrooms"));
         courses.add(new CourseDTO("Capra","Pizza",6,"White Pizza with Mozzarella, Goats Cheese, Black Olives and Rocket"));
         courses.add(new CourseDTO("Aglio","Pizza",4,"White Pizza with Mozzarella, Parmesan, Garlic and Rosemary"));
+        courses.add(new CourseDTO("Pasta Carbonara","Pasta",7,"Pasta with egg and Italian bacon sauce"));
+        courses.add(new CourseDTO("Spaghetti all’Amatriciana","Pasta",7,"Spaghetti with Amatriciana (tomato and Italian bacon sauce)")); 
+        courses.add(new CourseDTO("Tagliatelle al Ragù Bolognese","Pasta",9,"Traditional tortellini served with signature Bolognese Ragù"));
+        courses.add(new CourseDTO("Lasagne Verdi alla Bolognesea","Pasta",6,"Green lasagne with Bolognese Ragù sauce and bechamel cream"));
+        courses.add(new CourseDTO("Tagliatelle ai funghi","Pasta",8,"Tagliatelle with mushrooms"));
+        courses.add(new CourseDTO("Tortelloni al gorgonzola e pere caramellate","Pasta",7,"Tortelloni with Gorgonzola cheese and caramelised pearss"));
+        courses.add(new CourseDTO("Tortelloni burro e salvia","Pasta",8,"Stuffed tortelloni with ricotta cheese ,butter and sage"));
+        courses.add(new CourseDTO("Gnocchi di patate ai frutti di mare","Pasta",10,"Gnocchi pasta with seafood"));
+        courses.add(new CourseDTO("Linguine all’astice","Pasta",17,"Linguine served with lobster"));
+        courses.add(new CourseDTO("Peroni","Beer",4,"33cl bottle"));
+        courses.add(new CourseDTO("Moretti","Beer",4,"33cl bottle"));
+        courses.add(new CourseDTO("Menabrea","Beer",4,"33cl bottle"));   
+        courses.add(new CourseDTO("Coke","Softdrink",4,"33cl bottle"));
+        courses.add(new CourseDTO("Coke Zero","Softdrink",4,"33cl bottle"));
+        courses.add(new CourseDTO("Fanta","Softdrink",4,"33cl bottle"));   
+        
         CourseFacade facade=CourseFacade.getCourseFacade(EMF);
         for(CourseDTO courseDTO:courses){
             facade.createCourse(courseDTO);
