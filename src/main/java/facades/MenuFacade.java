@@ -30,7 +30,7 @@ public class MenuFacade {
             MenuDTO menu;
             try
             {
-                menu=new MenuDTO("PIZZA 2610", "Rødovres best pizzaria",cf.getAll() );
+                menu=new MenuDTO("Pizza 2610", "Rødovres best Italian food",cf.getAll() );
             }finally{
                 em.close();
             }
